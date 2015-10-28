@@ -781,7 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f65689fdf4db8040962c48cadc23d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
   Blanks:
   - {fileID: 583026468}
   - {fileID: 2034919563}
@@ -2542,6 +2541,8 @@ GameObject:
   - 4: {fileID: 1694239345}
   - 114: {fileID: 1694239346}
   - 114: {fileID: 1694239347}
+  - 114: {fileID: 1694239348}
+  - 114: {fileID: 1694239349}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -2572,16 +2573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cf7c3da71ddad40994645fe24f770d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroundStateItem: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-  GroundPriceItem: 40420f00404b4c008096980080f0fa028096980080f0fa028096980080f0fa02
-  TS: {fileID: 0}
-  win_ground: {fileID: 536561153}
-  win_tog: 0
-  win_slave: {fileID: 1357184424}
-  SpeedLevel: 1
-  PlusLevel: 1
-  GuanLevel: 0
-  debug: 0
 --- !u!114 &1694239347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2603,6 +2594,80 @@ MonoBehaviour:
   DC5: {fileID: 442372829}
   MoneySum: {fileID: 1397479901}
   GuanLevel_text: {fileID: 500120915}
+--- !u!114 &1694239348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694239344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64c43a711da774db19f7bf6651a9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TS: {fileID: 1694239347}
+  win_ground: {fileID: 536561153}
+  win_slave: {fileID: 1357184424}
+  DCMoney: 0
+  GroundStateItem: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  GroundPriceItem: 40420f00404b4c008096980080f0fa028096980080f0fa028096980080f0fa02
+  NCarr:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  DCMoneyArr:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  DCMoneyArrNoSum:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  SpeedLevel: 30
+  PlusLevel: 0
+  GuanLevel: 0
+  win_tog: 0
+  timesCount: 0
+  num1arr:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  num2arr:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  num1str: 
+  num2str: 
+  num1bonus: 
+--- !u!114 &1694239349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694239344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d7772c6a748cb499cf29506fbae0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1776077057
 GameObject:
   m_ObjectHideFlags: 0

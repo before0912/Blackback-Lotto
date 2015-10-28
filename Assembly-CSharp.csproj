@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\ClickTogItem.cs" />
      <Compile Include="Assets\Scripts\EventSend.cs" />
      <Compile Include="Assets\Scripts\Gui_Layout.cs" />
+     <Compile Include="Assets\Scripts\LottoLogic.cs" />
      <Compile Include="Assets\Scripts\Madang_bg.cs" />
      <Compile Include="Assets\Scripts\MainData.cs" />
      <Compile Include="Assets\Scripts\Quad_Layout.cs" />

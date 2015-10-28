@@ -4,25 +4,25 @@ using System.Collections;
 public class Btn_slave : MonoBehaviour {
 
 	private ClickObject CO;
-	private GameObject Target;
 	private main Main;
+	private MainData MD;
 	
 	// Use this for initialization
 	void Start () {
 		CO = GetComponent<ClickObject>();
-		Target = GameObject.Find("/Main");
-		Main = Target.GetComponent<main>();
+		Main = (GameObject.Find("/Main")).GetComponent<main>();
+		MD = (GameObject.Find("/Main")).GetComponent<MainData>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (CO.isClick () == true) {
 			Main.closeAllWindows ();
-			if (Main.win_tog == false) {
-				Main.win_tog =true;
-				Main.win_slave.gameObject.SetActive (Main.win_tog);
+			if (MD.win_tog == false) {
+				MD.win_tog =true;
+				MD.win_slave.gameObject.SetActive (MD.win_tog);
 			} else {
-				Main.win_tog = false;
+				MD.win_tog = false;
 			}
 		}
 	}
