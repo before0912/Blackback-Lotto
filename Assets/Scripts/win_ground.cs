@@ -47,6 +47,8 @@ public class win_ground : MonoBehaviour {
 	}
 
 	bool Purchase(int itemNumber){	// 구입
+		Debug.Log (itemNumber);
+		Debug.Log (MD.GroundPriceItem [itemNumber]);
 		if (MD.DCMoneySum >= MD.GroundPriceItem [itemNumber]) {
 			Debug.Log ("p true");
 			MD.DCMoneySum -= MD.GroundPriceItem [itemNumber];

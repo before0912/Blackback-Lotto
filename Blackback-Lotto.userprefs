@@ -1,15 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainData.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\win_ground.cs">
     <Files>
+      <File FileName="Assets\Scripts\win_ground.cs" Line="51" Column="32" />
+      <File FileName="Assets\Scripts\ClickTogItem.cs" Line="23" Column="63" />
       <File FileName="Assets\Scripts\main.cs" Line="94" Column="1" />
-      <File FileName="Assets\Scripts\MainData.cs" Line="55" Column="1" />
-      <File FileName="Assets\Scripts\Btn_level.cs" Line="44" Column="1" />
-      <File FileName="Assets\Scripts\LottoLogic.cs" Line="99" Column="1" />
-      <File FileName="Assets\Scripts\ClickSlaveMan.cs" Line="44" Column="1" />
-      <File FileName="Assets\Scripts\Btn_ground.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\Btn_slave.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\win_ground.cs" Line="79" Column="1" />
+      <File FileName="Assets\Scripts\MainData.cs" Line="36" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
