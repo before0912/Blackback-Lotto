@@ -6,7 +6,7 @@ public class Btn_ground : MonoBehaviour {
 	private ClickObject CO;
 	private main Main;
 	private MainData MD;
-	
+	//이태화
 	// Use this for initialization
 	void Start () {
 		CO = GetComponent<ClickObject>();
