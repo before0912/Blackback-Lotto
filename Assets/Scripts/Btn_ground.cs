@@ -6,7 +6,7 @@ public class Btn_ground : MonoBehaviour {
 	private ClickObject CO;
 	private main Main;
 	private MainData MD;
-	//이태화
+
 	// Use this for initialization
 	void Start () {
 		CO = GetComponent<ClickObject>();
@@ -18,21 +18,15 @@ public class Btn_ground : MonoBehaviour {
 	void Update () {
 		if (CO.isClick () == true) {
 			Main.closeAllWindows ();
+			MD.win_ground.gameObject.SetActive (true);
+			/*
 			if (MD.win_tog == false) {
 				MD.win_tog =true;
 				MD.win_ground.gameObject.SetActive (MD.win_tog);
 			} else {
 				MD.win_tog = false;
 			}
+			*/
 		}
 	}
 }
-
-
-
-
-
-// 김항락
-
-
-//하하

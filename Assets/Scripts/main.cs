@@ -30,7 +30,7 @@ public class main : MonoBehaviour {
 	{
 		firstDisplay ();
 		secondDisplay ();
-		thirdDisplay ();
+		//thirdDisplay ();
 	}
 
 
@@ -38,50 +38,49 @@ public class main : MonoBehaviour {
 	void firstDisplay(){
 		MD.timesCount++;
 		TS.Times.text = string.Format("{0,8:N0}",MD.timesCount);
-		//TS.Times.text = "제 "+string.Format("{0,0:N6}",tt)+" 회 추첨";
 		
 		MD.num1arr = LL.getNumberArray ();
 		MD.num1str = string.Join (" ", MD.num1arr);
 		MD.num1bonus = LL.getNumber (MD.num1arr);
-		//TS.Num1.text = MD.num1str+" : "+MD.num1bonus;
+		TS.Num1.text = MD.num1str+" : "+MD.num1bonus;
 
 		MD.num2arr = LL.getNumberArray ();
 		MD.num2str = string.Join (" ", MD.num2arr);
-		//TS.Num2.text = MD.num2str;
+		TS.Num2.text = MD.num2str;
 	}
 
 	void secondDisplay(){
 		NC = LL.isDangchum (MD.num1arr,MD.num2arr);
 		if (NC == 1) {	// 1st
-			TS.Num1.text = MD.num1str+" : "+MD.num1bonus;
-			//TS.DC1.text = secondDisplayText(1);
+			TS.DC1.text = secondDisplayText(1);
 		} else if (NC == 2) {	// 2st
-			TS.Num2.text = MD.num1str+" : "+MD.num1bonus;
-			//TS.DC2.text = secondDisplayText(2);
+			TS.DC2.text = secondDisplayText(2);
 		} else if (NC == 3) {	// 3st
-			//TS.DC3.text = secondDisplayText(3);
+			TS.DC3.text = secondDisplayText(3);
 		} else if (NC == 4) {	// 4st
-			//TS.DC4.text = secondDisplayText(4);
+			TS.DC4.text = secondDisplayText(4);
 		} else if (NC == 5) {	// 5st
-			//TS.DC5.text = secondDisplayText(5);
+			TS.DC5.text = secondDisplayText(5);
 		}
 
-		double[] DCMoneyArr = MD.DCMoneyArr;
-		double sum = DCMoneyArr[1]+DCMoneyArr[2]+DCMoneyArr[3]+DCMoneyArr[4]+DCMoneyArr[5]+DCMoneyArr[6];
-		TS.MoneySum.text = "돈 "+string.Format("{0,0:N0}", sum)+"원";
+		TS.MoneySum.text = "돈 "+string.Format("{0,0:N0}", MD.DCMoneySum)+"원";
 	}
 
 	string secondDisplayText(int n){
-		//return MD.num2str+"  "+string.Format("{0,0:N0}", MD.NCarr[NC])+"회";
+		return MD.num2str+"  "+string.Format("{0,0:N0}", MD.NCarr[NC])+"회";
+	}
+	string thirdDisplayText(int n){
 		return string.Format ("{0,11:N0}", MD.DCMoneyArrNoSum[n]);
 	}
 
 	void thirdDisplay(){
-		TS.DC1.text = secondDisplayText (1);
-		TS.DC2.text = secondDisplayText (2);
-		TS.DC3.text = secondDisplayText (3);
-		TS.DC4.text = secondDisplayText (4);
-		TS.DC5.text = secondDisplayText (5);
+		TS.Num1.text = MD.num1str+" : "+MD.num1bonus;
+		TS.Num2.text = MD.num1str+" : "+MD.num1bonus;
+		TS.DC1.text = thirdDisplayText (1);
+		TS.DC2.text = thirdDisplayText (2);
+		TS.DC3.text = thirdDisplayText (3);
+		TS.DC4.text = thirdDisplayText (4);
+		TS.DC5.text = thirdDisplayText (5);
 	}
 
 	

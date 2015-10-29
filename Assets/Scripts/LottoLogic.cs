@@ -37,9 +37,12 @@ public class LottoLogic : MonoBehaviour {
 	}
 	
 	public double PlusCache(double cache){
-		float tm = MD.PlusLevel / 10f * System.Convert.ToSingle(cache);
-		float tm2 = MD.GuanLevel / 1f * System.Convert.ToSingle(cache);
-		return cache + tm + tm2;
+		//float tm = MD.PlusLevel / 10f * System.Convert.ToSingle(cache);
+		float tm = MD.DCGuanPercent * System.Convert.ToSingle(cache);
+		tm += MD.DCGroundPercent * System.Convert.ToSingle(cache);
+		tm += MD.DCPlusPercent * System.Convert.ToSingle(cache);
+
+		return cache + tm;
 	}
 	
 	public int isDangchum(string[] arr1,string[] arr2){
@@ -60,21 +63,26 @@ public class LottoLogic : MonoBehaviour {
 		}
 		if (cnt == 6) {	// 1st
 			rank = 1;
-			MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];
+			MD.DCMoneySum += MD.DCMoneyArrNoSum[rank];		// 보유금액
+			MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];	// 당첨 등수별 누적금
 		} else if (cnt == 5) {	// 3st
 			
 			if(System.Array.IndexOf(arr2,MD.num1bonus) != -1){
 				rank = 2;
+				MD.DCMoneySum += MD.DCMoneyArrNoSum[rank];
 				MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];
 			}else{
 				rank = 3;
+				MD.DCMoneySum += MD.DCMoneyArrNoSum[rank];
 				MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];
 			}
 		} else if (cnt == 4) {	// 4st
 			rank = 4;
+			MD.DCMoneySum += MD.DCMoneyArrNoSum[rank];
 			MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];
 		} else if (cnt == 3) {	// 5st
 			rank = 5;
+			MD.DCMoneySum += MD.DCMoneyArrNoSum[rank];
 			MD.DCMoneyArr[rank] += MD.DCMoneyArrNoSum[rank];
 		}
 
@@ -82,6 +90,7 @@ public class LottoLogic : MonoBehaviour {
 		if (rank > 0) {
 			MD.NCarr [rank]++;
 		}
+
 		return rank;
 	}
 

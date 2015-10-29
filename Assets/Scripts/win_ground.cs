@@ -18,10 +18,18 @@ public class win_ground : MonoBehaviour {
 
 	void resClickItem(int itemNumber)
 	{
-		if (itemNumber > 0)
-			itemNumber--;
-		MD.GroundStateItem [itemNumber] = MD.GroundStateItem [itemNumber] * -1;
+
+		if(MD.GroundStateItem [itemNumber] == -1){
+			if(Purchase (itemNumber)) MD.GroundStateItem [itemNumber] = MD.GroundStateItem [itemNumber] * -1;
+		}
+		else if(MD.GroundStateItem [itemNumber] == 1){
+			if(Sale (itemNumber)) MD.GroundStateItem [itemNumber] = MD.GroundStateItem [itemNumber] * -1;
+		}
+
 		transBlankState ();
+
+		DCGroundPercent ();
+
 	}
 
 	void resClickBlank(int itemNumber)
@@ -36,5 +44,35 @@ public class win_ground : MonoBehaviour {
 			if(MD.GroundStateItem[i] == -1) Blanks[i].gameObject.SetActive(false);
 			else  Blanks[i].gameObject.SetActive(true);
 		}
+	}
+
+	bool Purchase(int itemNumber){	// 구입
+		if (MD.DCMoneySum >= MD.GroundPriceItem [itemNumber]) {
+			Debug.Log ("p true");
+			MD.DCMoneySum -= MD.GroundPriceItem [itemNumber];
+			return true;
+		} else {
+			Debug.Log ("p false");
+			return false;
+		}
+
+	}
+
+	bool Sale(int itemNumber){		//	판매
+		MD.DCMoneySum += MD.GroundPriceItem [itemNumber];
+		Debug.Log ("s true");
+		return true;
+	}
+
+	void DCGroundPercent(){
+		float tm = 0f;
+		for (int i=0; i<MD.GroundStateItem.Length; i++) 
+		{
+			if(MD.GroundStateItem[i] == 1){
+				tm += MD.GroundPercentItem[i];
+			}
+		}
+
+		MD.DCGroundPercent = tm;
 	}
 }

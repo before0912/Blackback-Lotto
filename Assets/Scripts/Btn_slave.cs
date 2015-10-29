@@ -18,12 +18,15 @@ public class Btn_slave : MonoBehaviour {
 	void Update () {
 		if (CO.isClick () == true) {
 			Main.closeAllWindows ();
+			MD.win_slave.gameObject.SetActive (true);
+			/*
 			if (MD.win_tog == false) {
 				MD.win_tog =true;
 				MD.win_slave.gameObject.SetActive (MD.win_tog);
 			} else {
 				MD.win_tog = false;
 			}
+			*/
 		}
 	}
 }
